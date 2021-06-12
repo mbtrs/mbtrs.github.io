@@ -11,6 +11,12 @@ section {
   grid-template-columns: 100px 1fr 100px;
   grid-template-rows: repeat(7, 100px); }
 
+.home {
+  grid-row: 1 / 2;
+  filter: drop-shadow(0 0.1rem 0.1rem black); }
+  .home a {
+    border-bottom: none; }
+
 footer {
   grid-row: 4 / 5;
   grid-column: 1 / -1;
@@ -45,5 +51,66 @@ article {
     .flex-container a:last-child::before {
       content: "| ";
       white-space: pre; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr 100px;
+  grid-template-rows: repeat(5, 100px);
+  grid-auto-flow: row;
+  align-items: center;
+  text-align: center; }
+  .grid-container a {
+    text-transform: uppercase;
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
+    font-size: 1.2em;
+    color: #000;
+    font-weight: bold; }
+
+.cert1 {
+  grid-area: 2/2/4/4;
+  text-align: center; }
+
+.link1 {
+  grid-area: 3/2/5/3; }
+
+.link2 {
+  grid-area: 3/3/5/4; }
+
+.link3 {
+  grid-area: 4/2/6/3; }
+
+.link4 {
+  grid-area: 4/3/6/4; }
+
+.project-container {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  grid-template-rows: 100px repeat(3, 1fr);
+  align-items: center;
+  text-align: center; }
+  .project-container h3, .project-container h5 {
+    opacity: 0.5; }
+
+.project1, .project2 {
+  align-self: center;
+  text-align: center;
+  font-family: 'Raleway', sans-serif; }
+  .project1 a, .project2 a {
+    color: #ff6f69;
+    font-size: 2.5em;
+    text-shadow: 2px 0px 3px #000;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom: 3px solid rgba(100, 205, 245, 0.45);
+    transition: all 0.2s ease-in; }
+    .project1 a:hover, .project2 a:hover {
+      border-radius: 7px; }
+
+.project1 {
+  grid-area: 2/4/3/1; }
+
+.project2 {
+  grid-area: 3/4/4/1; }
 
 /*# sourceMappingURL=style.css.map */

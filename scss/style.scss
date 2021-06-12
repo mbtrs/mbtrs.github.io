@@ -9,7 +9,7 @@ $border-radius: 7px;
 
 @mixin shadow {
   text-shadow:
-    1px 1px 2px #000;
+    2px 0px 3px #000;
     // 1px 1px 0 #fff,
     // -1px -1px 0 #fff,
     // 1px -2px 0 #fff,
@@ -63,7 +63,15 @@ section {
     //   -1px 1px 0 #F3F8F3,
     //   1px 1px 0 #F3F8F3;
   // }
+}
 
+.home {
+  grid-row: 1 / 2;
+  filter: drop-shadow(0 0.1rem 0.1rem rgb(0, 0, 0));
+
+  & a {
+    border-bottom: none;
+  }
 }
 
 footer {
@@ -109,4 +117,86 @@ article {
         white-space: pre;
       }
     }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr 100px;
+  grid-template-rows: repeat(5, 100px);
+  grid-auto-flow: row;
+  align-items: center;
+  text-align: center;
+  
+   & a {
+      text-transform: uppercase;
+      text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
+      font-size: 1.2em;
+      color: #000;
+      font-weight: bold;
+    }
+}
+
+.cert1 {
+  grid-area: 2/2/4/4;
+  text-align: center;
+}
+
+.link1 {
+  grid-area: 3/2/5/3;
+}
+
+.link2 {
+  grid-area: 3/3/5/4;
+}
+
+.link3 {
+  grid-area: 4/2/6/3;
+}
+
+.link4 {
+  grid-area: 4/3/6/4;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  grid-template-rows: 100px repeat(3, 1fr);
+  align-items: center;
+  text-align: center;
+
+  & h3, h5 {
+    opacity: 0.5;
+    // -webkit-text-stroke: 1px #000;
+  }
+}
+
+.project1, .project2 {
+  align-self: center;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+
+  & a {
+    color: #ff6f69;
+    font-size: 2.5em;
+    @include shadow;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom: 3px solid rgba(100, 205, 245, 0.45);
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      // @include shadow;
+      border-radius: $border-radius;
+      // background-color: rgba(143, 212, 240, 0.2);
+    }
+  }
+}
+
+.project1 {
+  grid-area: 2/4/3/1;
+}
+
+.project2 {
+  grid-area: 3/4/4/1;
 }

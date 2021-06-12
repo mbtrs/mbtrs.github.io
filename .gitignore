@@ -1,4 +1,5 @@
 ?sass-cache
-style.css.map
+scss/*.css.map
 script.js
 .DS_Store
+projects-copy.css
