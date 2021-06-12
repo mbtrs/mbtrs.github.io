@@ -1,0 +1,49 @@
+html,
+body {
+  box-sizing: border-box;
+  background-color: #ffeead;
+  padding: 0;
+  margin: 0;
+  font-family: Iceland, Copperplate, Copperplate Gothic Light, fantasy; }
+
+section {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  grid-template-rows: repeat(7, 100px); }
+
+footer {
+  grid-row: 4 / 5;
+  grid-column: 1 / -1;
+  text-align: center;
+  align-self: center; }
+
+.github-img {
+  width: 60px; }
+
+article {
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+  align-self: center;
+  text-align: center; }
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center; }
+  .flex-container a {
+    text-transform: uppercase;
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
+    font-size: 1.2em;
+    color: #000;
+    font-weight: bold; }
+    .flex-container a:first-child::after {
+      content: " ";
+      white-space: pre; }
+    .flex-container a:last-child::before {
+      content: "| ";
+      white-space: pre; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,60 @@
+//sass --watch ./scss/ontrain.scss:./scss/ontrain.css
+
+html,
+body {
+  box-sizing: border-box;
+  background-color: #ffeead;
+  padding: 0;
+  margin: 0;
+  font-family: Iceland, Copperplate, Copperplate Gothic Light, fantasy;
+  // font-family: 'Iceland', Arial, Helvetica, sans-serif;
+}
+
+.home {
+    grid-row: 1 / 2;
+    filter: drop-shadow(0 0.1rem 0.1rem rgb(0, 0, 0));
+  
+    & a {
+      border-bottom: none;
+    }
+  }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr 100px;
+    grid-template-rows: repeat(5, 100px);
+    grid-auto-flow: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    
+     & a {
+        text-transform: uppercase;
+        text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
+        font-size: 1.2em;
+        color: #000;
+        font-weight: bold;
+      }
+  }
+
+.cert1 {
+    grid-area: 2/2/4/4;
+    text-align: center;
+}
+
+.link1 {
+    grid-area: 3/2/5/3;
+}
+
+.link2 {
+    grid-area: 3/3/5/4;
+}
+
+.link3 {
+    grid-area: 4/2/6/3;
+}
+
+.link4 {
+    grid-area: 4/3/6/4;
+}

@@ -1,0 +1,43 @@
+html,
+body {
+  box-sizing: border-box;
+  background-color: #ffeead;
+  padding: 0;
+  margin: 0;
+  font-family: 'Raleway', sans-serif; }
+
+section {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  grid-template-rows: 100px repeat(3, 1fr); }
+  section h3, section h5 {
+    opacity: 0.5; }
+
+.home {
+  grid-row: 1 / 2;
+  filter: drop-shadow(0 0.1rem 0.1rem black); }
+  .home a {
+    border-bottom: none; }
+
+.project1 {
+  grid-area: 2/4/4/1; }
+
+.project2 {
+  grid-area: 4/4/4/1; }
+
+article {
+  align-self: center;
+  text-align: center; }
+  article a {
+    color: #ff6f69;
+    font-size: 2.5em;
+    text-shadow: 2px 0px 3px #000;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom: 3px solid rgba(100, 205, 245, 0.45);
+    transition: all 0.2s ease-in; }
+    article a:hover {
+      border-radius: 7px; }
+
+/*# sourceMappingURL=projects.css.map */
