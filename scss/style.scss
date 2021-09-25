@@ -159,8 +159,8 @@ article {
 
 .project-container {
   display: grid;
-  grid-template-columns: 100px 1fr 100px;
-  grid-template-rows: 100px repeat(2, 1fr);
+  grid-template-columns: 80px 1fr 80px;
+  grid-template-rows: 80px repeat(3, 1fr) 80px;
   align-items: center;
   text-align: center;
 
@@ -189,12 +189,17 @@ article {
 }
 
 .project3 {
-  grid-area: 4/3/6/2;
+  grid-area: 4/3/5/2;
+}
+
+.project4 {
+  grid-area: 5/3/6/2;
 }
 
 .project1,
 .project2,
-.project3 {
+.project3,
+.project4 {
   align-self: center;
   text-align: center;
   font-family: 'Raleway', sans-serif;
@@ -215,14 +220,4 @@ article {
       // background-color: rgba(143, 212, 240, 0.2);
     }
   }
-}
-
-.gist {
-  max-width:500px;
-  overflow:auto;
-}
-
-.gist .blob-wrapper.data {
-  max-height:500px;
-  overflow:auto;
 }

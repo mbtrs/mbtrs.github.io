@@ -84,8 +84,8 @@ article {
 
 .project-container {
   display: grid;
-  grid-template-columns: 100px 1fr 100px;
-  grid-template-rows: 100px repeat(2, 1fr);
+  grid-template-columns: 80px 1fr 80px;
+  grid-template-rows: 80px repeat(3, 1fr) 80px;
   align-items: center;
   text-align: center; }
   .project-container h3,
@@ -99,17 +99,22 @@ article {
   grid-area: 3/3/4/2; }
 
 .project3 {
-  grid-area: 4/3/6/2; }
+  grid-area: 4/3/5/2; }
+
+.project4 {
+  grid-area: 5/3/6/2; }
 
 .project1,
 .project2,
-.project3 {
+.project3,
+.project4 {
   align-self: center;
   text-align: center;
   font-family: 'Raleway', sans-serif; }
   .project1 a,
   .project2 a,
-  .project3 a {
+  .project3 a,
+  .project4 a {
     color: #ff6f69;
     font-size: 2.5em;
     text-shadow: 2px 0px 3px #000;
@@ -120,15 +125,8 @@ article {
     transition: all 0.2s ease-in; }
     .project1 a:hover,
     .project2 a:hover,
-    .project3 a:hover {
+    .project3 a:hover,
+    .project4 a:hover {
       border-radius: 7px; }
-
-.gist {
-  max-width: 500px;
-  overflow: auto; }
-
-.gist .blob-wrapper.data {
-  max-height: 500px;
-  overflow: auto; }
 
 /*# sourceMappingURL=style.css.map */
