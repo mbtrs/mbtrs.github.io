@@ -163,14 +163,14 @@ footer {
   grid-area: 4/3/5/2;
 }
 
-.project4 {
+.gist {
   grid-area: 5/3/6/2;
 }
 
 .project1,
 .project2,
 .project3,
-.project4 {
+.gist {
   text-align: center;
   // font-family: 'Raleway', sans-serif;
 
@@ -204,7 +204,7 @@ footer {
   .project1,
   .project2,
   .project3,
-  .project4 {
+  .gist {
     & a {
       font-size: 2em;
     }
