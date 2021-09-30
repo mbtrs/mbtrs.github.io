@@ -1,3 +1,6 @@
+:root {
+  --borderradius: 7px; }
+
 html,
 body {
   box-sizing: border-box;
@@ -6,63 +9,61 @@ body {
   margin: 0;
   font-family: Iceland, Copperplate, Copperplate Gothic Light, fantasy; }
 
-section {
+/* main page */
+#index-grid {
   display: grid;
-  grid-template-columns: 100px 1fr 100px;
+  grid-template-columns: 1fr;
   grid-template-rows: repeat(7, 100px); }
 
+#menu-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  grid-row: 3 / 4; }
+  #menu-flex a {
+    text-transform: uppercase;
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
+    font-size: 1.2em;
+    color: #000;
+    font-weight: bold; }
+    #menu-flex a:first-child::after {
+      content: " ";
+      white-space: pre; }
+    #menu-flex a:last-child::before {
+      content: "| ";
+      white-space: pre; }
+
+/* home icon */
 .home {
+  text-align: center;
   grid-row: 1 / 2;
   filter: drop-shadow(0 0.1rem 0.1rem black); }
   .home a {
     border-bottom: none; }
 
+/* footer */
 footer {
-  grid-row: 4 / 5;
-  grid-column: 1 / -1;
+  grid-row: 7 / 8;
   text-align: center;
   align-self: center; }
 
 .github-img {
   width: 60px; }
 
-article {
-  align-self: center;
-  text-align: center; }
-
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  grid-row: 3 / 4;
-  grid-column: 2 / 3; }
-  .flex-container a {
-    text-transform: uppercase;
-    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
-    font-size: 1.2em;
-    color: #000;
-    font-weight: bold; }
-    .flex-container a:first-child::after {
-      content: " ";
-      white-space: pre; }
-    .flex-container a:last-child::before {
-      content: "| ";
-      white-space: pre; }
-
-.grid-container {
+/* training page */
+.training-container {
   display: grid;
   grid-template-columns: 100px 1fr 1fr 100px;
   grid-template-rows: repeat(5, 100px);
   grid-auto-flow: row;
   align-items: center;
   text-align: center; }
-  .grid-container a {
+  .training-container a {
     text-transform: uppercase;
     text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
-    font-size: 1.2em;
+    font-size: 2em;
     color: #000;
     font-weight: bold; }
 
@@ -71,7 +72,7 @@ article {
   text-align: center; }
 
 .link1 {
-  grid-area: 3/2/5/3; }
+  grid-area: 3/2/5/2; }
 
 .link2 {
   grid-area: 3/3/5/4; }
@@ -82,14 +83,13 @@ article {
 .link4 {
   grid-area: 4/3/6/4; }
 
+/* project page */
 .project-container {
   display: grid;
   grid-template-columns: 80px 1fr 80px;
-  grid-template-rows: 80px repeat(3, 1fr) 80px;
-  align-items: center;
-  text-align: center; }
-  .project-container h3,
-  .project-container h5 {
+  grid-template-rows: 80px repeat(3, 1fr) 50px;
+  align-items: center; }
+  .project-container h3, .project-container h5 {
     opacity: 0.5; }
 
 .project1 {
@@ -108,9 +108,7 @@ article {
 .project2,
 .project3,
 .project4 {
-  align-self: center;
-  text-align: center;
-  font-family: 'Raleway', sans-serif; }
+  text-align: center; }
   .project1 a,
   .project2 a,
   .project3 a,
@@ -118,7 +116,6 @@ article {
     color: #ff6f69;
     font-size: 2.5em;
     text-shadow: 2px 0px 3px #000;
-    text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
     border-bottom: 3px solid rgba(100, 205, 245, 0.45);
@@ -127,6 +124,38 @@ article {
     .project2 a:hover,
     .project3 a:hover,
     .project4 a:hover {
-      border-radius: 7px; }
+      border-radius: var(--borderradius); }
+
+@media all and (max-width: 660px) {
+  .project-container h3, .project-container h5 {
+    font-size: 0.95em; }
+
+  .project1 a,
+  .project2 a,
+  .project3 a,
+  .project4 a {
+    font-size: 2em; } }
+@media all and (max-width: 660px) {
+  .training-container {
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    grid-template-rows: repeat(6, 100px); }
+    .training-container a {
+      font-size: 2em; }
+
+  .cert1 {
+    grid-area: 2/1/4/4; }
+
+  .link1 {
+    grid-area: 3/2/5/2; }
+
+  .link2 {
+    grid-area: 4/1/4/4; }
+
+  .link3 {
+    grid-area: 6/2/4/2; }
+
+  .link4 {
+    grid-area: 5/1/5/4; } }
 
 /*# sourceMappingURL=style.css.map */

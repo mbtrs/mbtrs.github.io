@@ -5,7 +5,9 @@
 // font-family: 'Raleway', sans-serif;
 // font-family: 'Poppins', sans-serif;
 
-$border-radius: 7px;
+:root {
+  --borderradius: 7px;
+}
 
 @mixin shadow {
   text-shadow:
@@ -24,8 +26,6 @@ body {
   padding: 0;
   margin: 0;
   font-family: Iceland, Copperplate, Copperplate Gothic Light, fantasy;
-  // font-family: 'Iceland', Candara, Calibri, 'Segoe UI', Optima, Arial, sans-serif;
-  // font-family: Iceland, Arial, Helvetica, sans-serif;
 }
 
 // body::before {
@@ -39,66 +39,21 @@ body {
 //   z-index: 100;
 // }
 
-section {
+/* main page */
+
+#index-grid {
   display: grid;
-  grid-template-columns: 100px 1fr 100px;
+  grid-template-columns: 1fr;
   grid-template-rows: repeat(7, 100px);
-  // grid-gap: 30px;
-  // position: fixed;
-  // width: 100%;
-  // height: 100%;
-
-  // & h2 {
-  // color: #000;
-  // @include shadow;
-  // font-family: 'Poppins', sans-serif;
-  // opacity: 0.5;
-  // -webkit-text-stroke: 1px #000;
-  // color: #4073CA;
-  // font-size: 1.5em;
-  // text-shadow:
-  //   1px 1px 0 #F3F8F3,
-  //   -1px -1px 0 #F3F8F3,
-  //   1px -1px 0 #F3F8F3,
-  //   -1px 1px 0 #F3F8F3,
-  //   1px 1px 0 #F3F8F3;
-  // }
 }
 
-.home {
-  grid-row: 1 / 2;
-  filter: drop-shadow(0 0.1rem 0.1rem rgb(0, 0, 0));
-
-  & a {
-    border-bottom: none;
-  }
-}
-
-footer {
-  grid-row: 4 / 5;
-  grid-column: 1 / -1;
-  text-align: center;
-  align-self: center;
-}
-
-.github-img {
-  width: 60px;
-}
-
-article {
-  align-self: center;
-  text-align: center;
-}
-
-.flex-container {
+#menu-flex {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  align-content: center;
   grid-row: 3 / 4;
-  grid-column: 2 / 3;
 
   & a {
     text-transform: uppercase;
@@ -119,7 +74,33 @@ article {
   }
 }
 
-.grid-container {
+/* home icon */
+
+.home {
+  text-align: center;
+  grid-row: 1 / 2;
+  filter: drop-shadow(0 0.1rem 0.1rem rgb(0, 0, 0));
+
+  & a {
+    border-bottom: none;
+  }
+}
+
+/* footer */
+
+footer {
+  grid-row: 7 / 8;
+  text-align: center;
+  align-self: center;
+}
+
+.github-img {
+  width: 60px;
+}
+
+/* training page */
+
+.training-container {
   display: grid;
   grid-template-columns: 100px 1fr 1fr 100px;
   grid-template-rows: repeat(5, 100px);
@@ -130,7 +111,7 @@ article {
   & a {
     text-transform: uppercase;
     text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
-    font-size: 1.2em;
+    font-size: 2em;
     color: #000;
     font-weight: bold;
   }
@@ -142,7 +123,7 @@ article {
 }
 
 .link1 {
-  grid-area: 3/2/5/3;
+  grid-area: 3/2/5/2;
 }
 
 .link2 {
@@ -157,28 +138,18 @@ article {
   grid-area: 4/3/6/4;
 }
 
+/* project page */
+
 .project-container {
   display: grid;
   grid-template-columns: 80px 1fr 80px;
-  grid-template-rows: 80px repeat(3, 1fr) 80px;
+  grid-template-rows: 80px repeat(3, 1fr) 50px;
   align-items: center;
-  text-align: center;
 
-  & h3,
-  h5 {
+  & h3, h5 {
     opacity: 0.5;
-    // -webkit-text-stroke: 1px #000;
   }
-
-  // & h3 {
-  //   width: 50%;
-  // }
 }
-
-// h3 {
-//   width: 50%;
-// }
-
 
 .project1 {
   grid-area: 2/3/3/2;
@@ -200,15 +171,14 @@ article {
 .project2,
 .project3,
 .project4 {
-  align-self: center;
   text-align: center;
-  font-family: 'Raleway', sans-serif;
+  // font-family: 'Raleway', sans-serif;
 
   & a {
     color: #ff6f69;
     font-size: 2.5em;
     @include shadow;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
     border-bottom: 3px solid rgba(100, 205, 245, 0.45);
@@ -216,8 +186,59 @@ article {
 
     &:hover {
       // @include shadow;
-      border-radius: $border-radius;
+      border-radius: var(--borderradius);
       // background-color: rgba(143, 212, 240, 0.2);
     }
+  }
+}
+
+@media all and (max-width: 660px) {
+
+  .project-container {
+  
+    & h3, h5 {
+      font-size: 0.95em;
+    }
+  }
+
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    & a {
+      font-size: 2em;
+    }
+  }
+}
+
+@media all and (max-width: 660px) {
+  .training-container {
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    grid-template-rows: repeat(6, 100px);
+  
+    & a {
+      font-size: 2em;
+    }
+  }
+
+  .cert1 {
+    grid-area: 2/1/4/4;
+  }
+  
+  .link1 {
+    grid-area: 3/2/5/2;
+  }
+  
+  .link2 {
+    grid-area: 4/1/4/4;
+  }
+  
+  .link3 {
+    grid-area: 6/2/4/2;
+  }
+  
+  .link4 {
+    grid-area: 5/1/5/4;
   }
 }
