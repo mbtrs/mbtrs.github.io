@@ -28,11 +28,11 @@ body {
     font-size: 1.2em;
     color: #000;
     font-weight: bold; }
-    #menu-flex a:first-child::after {
-      content: " ";
-      white-space: pre; }
-    #menu-flex a:last-child::before {
-      content: "| ";
+    #menu-flex a:after {
+      content: "|";
+      padding: 0 10px; }
+    #menu-flex a:last-child::after {
+      content: "";
       white-space: pre; }
 
 /* home icon */
