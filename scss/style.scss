@@ -130,7 +130,7 @@ footer {
   grid-template-rows: 80px repeat(3, 1fr) 50px;
   align-items: center;
 
-  & h3, h5 {
+  & h3, h5, h6 {
     opacity: 0.5;
   }
 }

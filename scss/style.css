@@ -89,7 +89,7 @@ footer {
   grid-template-columns: 80px 1fr 80px;
   grid-template-rows: 80px repeat(3, 1fr) 50px;
   align-items: center; }
-  .project-container h3, .project-container h5 {
+  .project-container h3, .project-container h5, .project-container h6 {
     opacity: 0.5; }
 
 .project1 {
