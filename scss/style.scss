@@ -193,9 +193,7 @@ footer {
       font-size: 2em;
     }
   }
-}
 
-@media all and (max-width: 660px) {
   .training-container {
     display: grid;
     grid-template-columns: 100px 1fr 100px;
@@ -224,5 +222,29 @@ footer {
   
   .link4 {
     grid-area: 5/1/5/4;
+  }
+
+  #menu-flex {
+    display: grid;
+    grid-template-rows: repeat(4, 70px);
+
+    & a {
+      text-transform: uppercase;
+      text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
+      font-size: 1.2em;
+      color: #000;
+      font-weight: bold;
+      text-align: center;
+  
+      &:after {
+        content: "";
+        padding: 0 10px;
+      }
+  
+      &:last-child::after {
+        content: "";
+        white-space: pre;
+      }
+    }
   }
 }

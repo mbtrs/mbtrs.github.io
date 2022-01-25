@@ -38,7 +38,7 @@ body {
 }
 
 input[type="number"] {
-    letter-spacing: 0.1em;
+    /* letter-spacing: 0.1em; */
     padding: 10px;
     margin: 5px;
 }
