@@ -15,8 +15,8 @@ const getValue = (id) => getElement(id).value;
 const setValue = (id) => (value) => (getElement(id).value = value);
 
 // Date Calculations
-const today = new Date();
-const [currentYear, currentMonth] = [today.getFullYear(), today.getMonth() + 1];
+const currentYear = new Date().getFullYear();
+const currentMonth = new Date().getMonth() + 1;
 
 function calcTotalMonths() {
     const yearDifference = currentYear - getValue('yearInput');
@@ -44,7 +44,9 @@ function format(number) {
     return numberFormat.format(number);
 }
 
-const [green, red, yellow] = ["#26A65B", "#D24D57", "#F4D03F"];
+const green = '#26A65B';
+const red = '#D24D57';
+const yellow = '#F4D03F';
 
 // function changeBodyBg(color) {
 //     document.getElementById("resultColored").style.background = color;
@@ -56,17 +58,19 @@ function displayResult(averageMileage, inputMileage) {
         if (averageMileage > inputMileage) {
             resultOutput.style.background = green;
             // changeBodyBg(green);
-            return `This vehicle is ${format(difference)}km under average.`;
+            return `This vehicle is ${format(difference)} km under average.`;
         } else {
             resultOutput.style.background = red;
             // changeBodyBg(red);
-            return `This vehicle is ${format(difference)}km over average.`;
+            return `This vehicle is ${format(difference)} km over average.`;
         }
     }
 
     resultOutput.style.background = yellow;
-    resultOutput.innerHTML = averageMileage != inputMileage ? `${getDifference()}`
-        : "This vehicle's average mileage and current mileage match.";
+    resultOutput.innerHTML =
+        averageMileage != inputMileage
+            ? `${getDifference()}`
+            : "This vehicle's average mileage and current mileage match.";
 }
 
 function displayWarning(message) {
@@ -97,13 +101,14 @@ function handleInput() {
         if (getValue('monthInput') < 1) setValue('monthInput')(1);
         if (getValue('monthInput') > 12) setValue('monthInput')(12);
     }
+
     if (!isValidYear()) {
-        displayWarning(`The year value must be between 1900 and ${currentYear}.`);
+        displayWarning(`Year must be between 1900 and ${currentYear}.`);
     } else if (!isValidMonth()) {
         if (getValue('yearInput') == currentYear)
-            displayWarning(`The month value must be less than or equal to ${currentMonth}.`);
+            displayWarning(`Month must be between 1 and ${currentMonth}.`);
         else
-            displayWarning(`The month value must be between 1 and 12`)
+            displayWarning(`Month must be between 1 and 12.`);
     } else {
         displayResult(calcAverageMileage(), getValue('mileageInput'));
     }
@@ -111,4 +116,6 @@ function handleInput() {
 
 handleInput();
 
-getElements('yearInput', 'monthInput', 'mileageInput').forEach((input) => input.addEventListener('input', (inputEvent) => handleInput()));
+getElements('yearInput', 'monthInput', 'mileageInput').forEach((input) =>
+    input.addEventListener('input', (inputEvent) => handleInput())
+);

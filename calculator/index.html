@@ -19,9 +19,9 @@
         <h1 class="title">Car Mileage Calculator</h1>
 
         <form id="input-group">
-            <input id="yearInput" type="number" min="1900" class="form-control" placeholder="Enter Year...">
-            <input id="monthInput" type="number" min="1" max="12" class="form-control" placeholder="Enter Month...">
-            <input id="mileageInput" type="number" min="0" class="form-control" placeholder="Enter Mileage...">
+            <input id="yearInput" type="number" onfocus="this.value=''" min="1900" class="form-control" placeholder="Enter Year...">
+            <input id="monthInput" type="number" onfocus="this.value=''" min="1" max="12" class="form-control" placeholder="Enter Month...">
+            <input id="mileageInput" type="number" onfocus="this.value=''" min="0" class="form-control" placeholder="Enter Mileage...">
             <button class="button" onClick="window.location.reload(true)">Reset</button>
         </form>
 
