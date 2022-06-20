@@ -1,3 +1,15 @@
+@font-face {
+  font-family: Iceland;
+  src: url("../fonts/Iceland/Iceland-Regular.ttf"); }
+@font-face {
+  font-family: "Bree Serif";
+  src: url("../fonts/Bree_Serif/BreeSerif-Regular.ttf"); }
+@font-face {
+  font-family: Raleway;
+  src: url("../fonts/Raleway/Raleway-VariableFont_wght.ttf"); }
+@font-face {
+  font-family: Poppins;
+  src: url("../fonts/Poppins/Poppins-ExtraLight.ttf"); }
 :root {
   --borderradius: 7px; }
 
@@ -12,42 +24,48 @@ body {
 /* main page */
 #index-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(7, 100px); }
 
 #menu-flex {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  grid-row: 3 / 4; }
-  #menu-flex a {
+  grid-row: 3 / 4;
+  grid-column: 1 / 4; }
+  #menu-flex ul {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none; }
+  #menu-flex li a {
     text-transform: uppercase;
     text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
-    font-size: 1.2em;
+    font-size: 2em;
     color: #000;
     font-weight: bold; }
-    #menu-flex a:after {
-      content: "|";
-      padding: 0 10px; }
-    #menu-flex a:last-child::after {
-      content: "";
-      white-space: pre; }
 
 /* home icon */
-.home {
-  text-align: center;
-  grid-row: 1 / 2;
-  filter: drop-shadow(0 0.1rem 0.1rem black); }
-  .home a {
-    border-bottom: none; }
-
 /* footer */
-footer {
+.index-footer {
   grid-row: 7 / 8;
+  grid-column: 2 / 3;
   text-align: center;
   align-self: center; }
+
+.project-footer {
+  grid-area: 6/3/7/2;
+  text-align: center;
+  filter: drop-shadow(0 0.1rem 0.1rem black); }
+  .project-footer a {
+    border-bottom: none; }
+
+.training-footer {
+  grid-area: 6/2/7/4;
+  text-align: center;
+  filter: drop-shadow(0 0.1rem 0.1rem black); }
+  .training-footer a {
+    border-bottom: none; }
 
 .github-img {
   width: 60px; }
@@ -56,7 +74,7 @@ footer {
 .training-container {
   display: grid;
   grid-template-columns: 100px 1fr 1fr 100px;
-  grid-template-rows: repeat(5, 100px);
+  grid-template-rows: repeat(6, 100px);
   grid-auto-flow: row;
   align-items: center;
   text-align: center; }
@@ -87,18 +105,21 @@ footer {
 .project-container {
   display: grid;
   grid-template-columns: 80px 1fr 80px;
-  grid-template-rows: 80px repeat(3, 1fr) 50px;
+  grid-template-rows: repeat(4, 1fr) 80px 80px;
   align-items: center; }
   .project-container h3, .project-container h5, .project-container h6 {
     opacity: 0.5; }
 
 .project1 {
-  grid-area: 2/3/3/2; }
+  grid-area: 1/3/2/2; }
 
 .project2 {
-  grid-area: 3/3/4/2; }
+  grid-area: 2/3/3/2; }
 
 .project3 {
+  grid-area: 3/3/4/2; }
+
+.project4 {
   grid-area: 4/3/5/2; }
 
 .gist {
@@ -107,11 +128,13 @@ footer {
 .project1,
 .project2,
 .project3,
+.project4,
 .gist {
   text-align: center; }
   .project1 a,
   .project2 a,
   .project3 a,
+  .project4 a,
   .gist a {
     color: #ff6f69;
     font-size: 2.5em;
@@ -123,6 +146,7 @@ footer {
     .project1 a:hover,
     .project2 a:hover,
     .project3 a:hover,
+    .project4 a:hover,
     .gist a:hover {
       border-radius: var(--borderradius); }
 
@@ -133,6 +157,7 @@ footer {
   .project1 a,
   .project2 a,
   .project3 a,
+  .project4 a,
   .gist a {
     font-size: 2em; }
 
@@ -158,21 +183,9 @@ footer {
   .link4 {
     grid-area: 5/1/5/4; }
 
-  #menu-flex {
-    display: grid;
-    grid-template-rows: repeat(4, 70px); }
-    #menu-flex a {
-      text-transform: uppercase;
-      text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
-      font-size: 1.2em;
-      color: #000;
-      font-weight: bold;
-      text-align: center; }
-      #menu-flex a:after {
-        content: "";
-        padding: 0 10px; }
-      #menu-flex a:last-child::after {
-        content: "";
-        white-space: pre; } }
+  #menu-flex ul {
+    justify-content: space-evenly; }
+  #menu-flex li a {
+    font-size: 1.5em; } }
 
 /*# sourceMappingURL=style.css.map */
