@@ -39,7 +39,7 @@ body {
   background-color: #ffeead;
   padding: 0;
   margin: 0;
-  font-family: Iceland, Copperplate, Copperplate Gothic Light, fantasy;
+  font-family: Raleway, Poppins, Copperplate, Copperplate Gothic Light, fantasy;
 }
 
 /* main page */
@@ -275,6 +275,10 @@ body {
     & a {
       font-size: 2em;
     }
+  }
+
+  .training-footer {
+    grid-area: 6/2/7/3;
   }
 
   .cert1 {
