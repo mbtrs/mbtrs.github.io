@@ -74,7 +74,7 @@ body {
 .training-container {
   display: grid;
   grid-template-columns: 100px 1fr 1fr 100px;
-  grid-template-rows: repeat(6, 100px);
+  grid-template-rows: repeat(5, 100px);
   grid-auto-flow: row;
   align-items: center;
   text-align: center; }
@@ -190,5 +190,3 @@ body {
     justify-content: space-evenly; }
   #menu-flex li a {
     font-size: 1.5em; } }
-
-/*# sourceMappingURL=style.css.map */
